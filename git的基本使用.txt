@@ -1,0 +1,68 @@
+*********新建仓库并连接到github的操作*********
+# 切换到 D 盘
+D:
+
+# 创建并进入新文件夹
+mkdir new-repo
+cd new-repo
+
+# 初始化本地仓库
+git init
+
+# 创建并编辑文件
+echo "Hello World" > README.md
+
+# 添加文件到暂存区
+git add README.md
+
+# 提交到本地仓库
+git commit -m "Initial commit"
+
+# 添加远程仓库
+git remote add origin https://github.com/tangjluser/new-repo.git
+
+# 推送到远程仓库
+git push -u origin main
+
+*********在已有仓库提交新的内容*********
+# 进入本地仓库目录
+cd D:\myproject
+
+# 创建新文件或修改现有文件
+echo "New content" > newfile.txt
+
+# 查看状态
+git status
+
+# 添加所有更改的文件到暂存区
+git add .
+
+# 提交更改到本地仓库
+git commit -m "Add newfile.txt"
+
+# 推送更改到远程仓库
+git push origin main
+
+*********删除已有库中的文件*********
+# 切换到本地仓库目录
+cd D:\myproject
+
+# 删除文件
+git rm oldfile.txt
+
+# 提交更改
+git commit -m "Remove oldfile.txt"
+
+# 推送到远程仓库
+git push origin main
+
+*********简化推送代码*********
+方法一：
+
+# 首次推送并关联分支
+git push -u origin main
+
+# 之后的推送
+git push
+
+方法二：（修改全局）git config --global push.default matching
